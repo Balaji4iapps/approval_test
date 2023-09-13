@@ -1,0 +1,85 @@
+<!-- vb default-layout:flex -->
+<div class="oj-flex">
+  <oj-form-layout class="oj-flex-item oj-formlayout-full-width" max-columns="2">
+<!-- <div class="oj-flex" style="top:500px;">
+      <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-12 oj-xl-12 oj-panel oj-panel-shadow-md oj-selected"
+        style="width:300rem;top:25px;">
+        <div class="oj-flex">
+          <div class="oj-flex-item oj-sm-12 oj-md-12"> -->
+    <oj-validation-group id="11">
+    <oj-form-layout class="oj-flex-item oj-form-control-inherit oj-formlayout-full-width" id="1">
+      
+      <oj-list-view class="oj-flex-item oj-sm-flex-initial oj-listview-full-width"
+        data="[[$variables.getCloud18ApprovalhistorygetallListSDP]]" selection-mode="single"
+        on-first-selected-item-changed="[[$listeners.listViewFirstSelectedItem]]" scroll-to-key="capability"
+        scroll-policy="loadMoreOnScroll">
+        <template slot="itemTemplate">
+          <oj-list-item-layout>
+            <div slot="leading">
+              <oj-bind-if test="[[ $current.data.action_code === 'Approved' ]]">
+                <oj-avatar class="oj-flex-item oj-sm-flex-initial"
+                  src="[[ $flow.path + 'resources/images/11-110619_file-approve-svg-approve-transparent-approve-icon-png.png' ]]">
+                </oj-avatar>
+              </oj-bind-if>
+              <oj-bind-if test="[[ $current.data.action_code === 'Open']]">
+                <oj-avatar class="oj-flex-item oj-sm-flex-initial" src="[[ $flow.path + 'resources/images/open.png' ]]">
+                </oj-avatar>
+              </oj-bind-if>
+              <oj-bind-if test="[[ $current.data.action_code === 'Pending']]">
+                <oj-avatar class="oj-flex-item oj-sm-flex-initial"
+                  src="[[ $flow.path + 'resources/images/pending.png' ]]"></oj-avatar>
+              </oj-bind-if>
+              <oj-bind-if test="[[ $current.data.action_code === 'Closed']]">
+                <oj-avatar class="oj-flex-item oj-sm-flex-initial"
+                  src="[[ $flow.path + 'resources/images/png-clipart-red-lock-application-padlock-red-apps-almanah-user-interface-design-desktop-wallpaper.png' ]]">
+                </oj-avatar>
+              </oj-bind-if>
+            </div>
+            <div>
+              <oj-bind-text value="[[ $current.data.transaction_source ]]"></oj-bind-text>
+            </div>
+            <div slot="secondary">
+              <oj-bind-text value="[[ $current.data.category ]]"></oj-bind-text>
+            </div>
+            <div slot="tertiary">
+              <oj-bind-text value="[[ $current.data.action_code ]]"></oj-bind-text>
+            </div>
+            <div slot="metadata">
+              <oj-bind-text value="[[ $current.data.action_date ]]"></oj-bind-text>
+            </div>
+          </oj-list-item-layout>
+        </template>
+      </oj-list-view>
+    </oj-form-layout>
+    </oj-validation-group>
+          <!-- </div></div></div></div> -->
+    <div class="oj-flex" style="top:500px;">
+      <div class="oj-flex-item oj-sm-12 oj-md-12 oj-lg-12 oj-xl-12 oj-panel oj-panel-shadow-md oj-selected"
+        style="width:300rem;top:80px;position:fixed;">
+        <div class="oj-flex">
+          <div class="oj-flex-item oj-sm-12 oj-md-12">
+            <oj-form-layout label-edge='start' columns="1" max-columns="1" direction="column"
+            >
+             <!-- <header style="background-color: white;position:fixed;" role="banner" class="oj-sm-flex-initial vb-web-applayout-header ">
+  -->
+              <oj-input-text label-hint="Transaction number" value="{{ $variables.form_data.transaction_num }}">
+              </oj-input-text>
+              <oj-input-text label-hint="Status" value="{{ $variables.form_data.code }}"></oj-input-text>
+              <oj-input-text label-hint="Level" value="{{ $variables.form_data.action_level }}"></oj-input-text>
+              <oj-input-text label-hint="Comments" 
+                value="{{ $variables.form_data.action_comments }}"></oj-input-text>
+              <oj-input-text label-hint="Approved By" value="{{ $variables.form_data.approved_by }}"></oj-input-text>
+              <oj-input-text label-hint="Submission Date " value="{{ $variables.form_data.submission_date }}">
+              </oj-input-text>
+              <oj-input-text label-hint="Requester User " value="{{ $variables.form_data.requester_user_id }}">
+              </oj-input-text>
+              <oj-input-text label-hint="Response User" value="{{ $variables.form_data.response_user_id }}">
+              </oj-input-text>
+            </oj-form-layout>
+          </div>
+        </div>
+      </div>
+    </div>
+  </oj-form-layout>
+
+</div>

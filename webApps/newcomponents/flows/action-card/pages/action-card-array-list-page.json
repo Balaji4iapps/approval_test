@@ -1,0 +1,68 @@
+{
+  "title": "action card array list",
+  "description": "",
+  "variables": {
+    "dashboardVar": {
+      "type": "dashboard"
+    },
+    "getCloud18CloudsearchListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "test/getCloud18Cloudsearch",
+        "keyAttributes": "cloud_id",
+        "itemsPath": "items",
+        "responseType": "getCloud18CloudsearchResponse"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getCloud18CloudsearchResponse": {
+      "endpoint": "getCloud18Cloudsearch",
+      "service": "test",
+      "path": "response"
+    },
+    "dashboard": [
+      {
+        "application": "string",
+        "certification": "string",
+        "contract": "string",
+        "covid": "string"
+      }
+    ],
+    "getCloud18CloudsearchResponse": {
+      "items": [
+        {
+          "cloud_id": "number",
+          "cloud_name": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-masonry-layout": {
+        "path": "ojs/ojmasonrylayout"
+      }
+
+    }
+  }
+}

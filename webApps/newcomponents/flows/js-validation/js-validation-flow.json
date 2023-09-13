@@ -1,0 +1,8 @@
+{
+  "id": "js-validation",
+  "description": "Flow main",
+  "defaultPage": "js-validation-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

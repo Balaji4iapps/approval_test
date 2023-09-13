@@ -1,0 +1,243 @@
+<!-- <div class="oj-flex">
+
+<div class="oj-flex">
+  <div class="oj-flex oj-sm-flex-direction-column oj-flex-item oj-sm-12 oj-md-12" data-vb-layout-type="flex">
+
+<div style="width: 30%; height: 80%;"></div>
+
+
+    
+  </div>
+
+</div> -->
+
+
+
+
+<!-- 
+<div class="oj-flex-bar oj-sm-align-items-center">
+
+
+  <div class="oj-flex oj-sm-flex-direction-column oj-flex-item oj-sm-3 oj-md-3" data-vb-layout-type="flex">
+
+  <template slot="addRowCellTemplate">
+    <a target="_blank" class="oj-link">
+     
+    </a>
+  </template>
+   <template slot="addRowCellTemplate">
+    <a target="_blank" class="oj-link">
+     
+    </a>
+  </template>
+   <template slot="addRowCellTemplate">
+    <a target="_blank" class="oj-link">
+     
+    </a>
+  </template>
+   <template slot="addRowCellTemplate">
+    <a target="_blank" class="oj-link">
+     
+    </a>
+  </template>
+</oj-table>
+  
+</div>
+
+  <div class="oj-flex oj-sm-flex-direction-column oj-flex-item oj-sm-3 oj-md-3" data-vb-layout-type="flex"><oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.getCloud18CloudsearchListSDP2]]"
+  columns='[{"headerText":"cloud_name","field":"cloud_name"}]'></oj-table></div>
+
+
+  <div class="oj-flex oj-sm-flex-direction-column oj-flex-item oj-sm-3 oj-md-3" data-vb-layout-type="flex"><oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.getCloud18CloudsearchListSDP2]]"
+  columns='[{"headerText":"cloud_name","field":"cloud_name"}]'></oj-table></div>
+
+
+</div> -->
+<oj-masonry-layout>
+
+     <!-- data="[[$variables.getCloud18CloudsearchListSDP2]]"
+  columns='[{"headerText":"PERFORMANCE MANAGEMENT"}]' selection-mode.row="single"
+  edit-mode="rowEdit" display="grid" horizontal-grid-visible="disabled" vertical-grid-visible="disabled"
+  class="oj-table-data-cell-padding oj-flex-item" -->
+<!-- 
+    <div class="oj-masonrylayout-tile-2x1">
+    <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.getCloud18CloudsearchListSDP2]]"
+      columns='[{"headerText":"PERFORMANCE MANAGEMENT","field":"cloud_name","template":"PERFORMANCE MANAGEMENT"},
+      {"headerText":"","field":"","template":"PERFORMANCE MANAGEMENT"}
+                    ]'
+      selection-mode.row="single" edit-mode="rowEdit" display="grid" horizontal-grid-visible="disabled"
+      vertical-grid-visible="disabled" class="oj-table-data-cell-padding">
+        <template slot="PERFORMANCE MANAGEMENT">
+            <a target="_blank" class="oj-link" on-click="[[$listeners.hyperlinkClick]]">
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+            </a>
+        </template>
+    </oj-table>
+  </div> -->
+<!--   
+    <div class="oj-masonrylayout-tile-2x1 oj-flex">
+    <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.getCloud18CloudsearchListSDP2]]"
+  columns='[{"headerText":"PERFORMANCE MANAGEMENT","field":"cloud_name"}]' selection-mode.row="single"
+  edit-mode="rowEdit" display="grid" horizontal-grid-visible="disabled" vertical-grid-visible="disabled"
+  class="oj-table-data-cell-padding oj-flex-item"></oj-table>
+  </div> -->
+  
+<!-- 
+</oj-masonry-layout>
+<div class="oj-flex">
+ 
+</div>
+
+
+
+ <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12">
+    <div class="oj-flex">
+    <div class="oj-flex-item oj-sm-12 oj-md-4">
+       
+            <a target="_blank" class="oj-link" >performance</a>        <img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20">
+        
+<br>
+        <oj-bind-text value="covid"></oj-bind-text><br>
+        <oj-bind-text value="certification"></oj-bind-text><br>
+        <oj-bind-text value="vaccination"></oj-bind-text><br>
+
+    </div>
+
+
+
+
+
+
+      
+    </div>
+    <div class="oj-flex">
+    <oj-list-view class="oj-flex-item oj-sm-12 oj-md-12">
+        <template slot="itemTemplate">
+            <oj-list-item-layout>
+<!-- Remove span with class for icon and replace with img to directly use an image 
+<!--img src="[[ $current.data.image ]]" slot="leading" width="32" height="32"/
+                <div slot="leading">
+                    <span role="img" :class="[[ $current.data.icon ]]"></span>
+                </div>
+                <div>
+                    <oj-bind-text value="[[ $current.data.default ]]"></oj-bind-text>
+                </div>
+                <div slot="secondary">
+                    <oj-bind-text value="[[ $current.data.secondary ]]"></oj-bind-text>
+                </div>
+                <div slot="tertiary">
+                    <oj-bind-text value="[[ $current.data.tertiary ]]"></oj-bind-text>
+                </div>
+                <div slot="metadata">
+                    <oj-bind-text value="[[ $current.data.metadata ]]"></oj-bind-text>
+                </div>
+            </oj-list-item-layout>
+        </template>
+    </oj-list-view>
+    </div>
+  </div> -->
+  <div class="oj-masonrylayout-tile-2x3">
+    <h6>Performance</h6>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        <h6>allowance</h6>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement cost controlling service</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        
+
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        
+             <h6>allowance</h6>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+          <h6>Category</h6>
+
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        
+    <!-- </oj-form-layout> -->
+  </div>
+  <div class="oj-masonrylayout-tile-2x3">
+    <h6>Me</h6>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+         <h6>Administrator</h6>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        
+        </div>
+  <div class="oj-masonrylayout-tile-2x3"><h6>Performance Management</h6>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement allocation approval</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        
+           <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement allocation approval</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement allocation approval</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement allocation approval</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+  </div><div class="oj-masonrylayout-tile-2x3">
+    <h6>Tools</h6>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+  <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+
+   <h6>My Enterprises</h6>
+    <!-- <oj-form-layout label-edge='start'> -->
+ <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+  <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        
+  </div>
+
+
+  
+

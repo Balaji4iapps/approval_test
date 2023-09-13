@@ -1,0 +1,144 @@
+{
+  "title": "list",
+  "description": "",
+  "variables": {
+    "form_data": {
+      "type": {
+        "action_comments": "string",
+        "action_date": "any",
+        "action_level": "any",
+        "approved_by": "any",
+        "code": "string",
+        "requester_user_id": "any",
+        "response_user_id": "any",
+        "submission_date": "any",
+        "transaction_num": "string"
+
+      }
+    },
+    "getCloud18ApprovalhistorygetallListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "test/getCloud18Approvalhistorygetall",
+        "keyAttributes": "transaction_id",
+        "itemsPath": "items",
+        "responseType": "getCloud18ApprovalhistorygetallResponse"
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getCloud18ApprovalhistorygetallResponse": {
+      "endpoint": "getCloud18Approvalhistorygetall",
+      "service": "test",
+      "path": "response"
+    },
+    "getCloud18ApprovalhistorygetallResponse": {
+      "items": [
+        {
+          "action_code": "string",
+          "action_comments": "string",
+          "action_date": "string",
+          "action_history_id": "number",
+          "action_level": "number",
+          "action_sequence_num": "number",
+          "approved_by": "number",
+          "category": "string",
+          "created_by": "string",
+          "creation_date": "string",
+          "last_update_date": "string",
+          "last_update_login": "string",
+          "last_updated_by": "string",
+          "object_version_number": "number",
+          "requester_user_id": "number",
+          "response_user_id": "number",
+          "submission_date": "string",
+          "transaction_id": "number",
+          "transaction_num": "string",
+          "transaction_source": "string",
+          "transaction_type": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "listViewFirstSelectedItem": {
+      "chains": [
+        {
+          "chainId": "ListViewFirstSelectedItemChangeChain",
+          "parameters": {
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}"
+          }
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-avatar": {
+        "path": "ojs/ojavatar"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-dyn-form": {
+        "path": "oj-dyn/form/loader"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-menu": {
+        "path": "ojs/ojmenu"
+      },
+      "oj-menu-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-popup": {
+        "path": "ojs/ojpopup"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+
+    },
+    "modules": {
+      "ojValidationDateTime": {
+        "path": "ojs/ojvalidation-datetime"
+      }
+    }
+  }
+}

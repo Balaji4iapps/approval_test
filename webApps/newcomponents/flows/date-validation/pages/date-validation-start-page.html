@@ -1,0 +1,48 @@
+<br>
+<div class="oj-flex">
+
+  
+<oj-form-layout label-edge="top" columns="2">
+  
+  <oj-input-date class="oj-flex-item oj-sm-12 oj-md-8" label-hint="Disable Past date"
+    min="[[ oj.IntlConverterUtils.dateToLocalIso(new Date() ) ]]"
+    converter='{"type": "datetime", "options": {"pattern":"dd/MM/yy"}}'></oj-input-date>
+
+  
+  <oj-input-date class="oj-flex-item oj-sm-12 oj-md-8" label-hint="Disable  Past y no.of  date "
+    min="[[ oj.IntlConverterUtils.dateToLocalIso($functions.minusDate()) ]]"></oj-input-date>
+
+  
+  <oj-input-date class="oj-flex-item oj-sm-12 oj-md-8" label-hint="disable future dates"
+    max="[[ oj.IntlConverterUtils.dateToLocalIso(new Date() ) ]]"></oj-input-date>
+
+  
+  <oj-input-date class="oj-flex-item oj-sm-12 oj-md-8" label-hint="Disable y no.of future dates"
+    max="[[ oj.IntlConverterUtils.dateToLocalIso(new Date($functions.addDate()) ) ]]"></oj-input-date>
+  
+  <oj-input-date class="oj-flex-item oj-sm-12 oj-md-8" label-hint="From Date" value="{{ $variables.fromDate }}"></oj-input-date>
+
+<oj-input-date class="oj-flex-item oj-sm-12 oj-md-8" label-hint="To Date" min="[[ $variables.fromDate ]]"></oj-input-date>
+ 
+ 
+  <oj-input-date label-hint="[[$application.translations.app.input_date_label_hint]]" value="{{ $variables.today1month }}"
+    converter='{"type": "datetime", "options": {"pattern":"dd/MM/yy"}}'></oj-input-date>
+
+
+
+  
+  
+    <oj-input-date class="oj-flex-item oj-sm-12 oj-md-8" label-hint="Start  Date" "="" value="{{ $variables.Start_Date }}"
+      converter='{"type": "datetime", "options": {"pattern":"MM/dd/yy"}}'></oj-input-date>
+
+<oj-input-date class="oj-flex-item oj-sm-12 oj-md-8" label-hint="End  Date" value="{{ $variables.end_date }}"
+  on-value-changed="[[$listeners.inputDateValue]]" converter='{"type": "datetime", "options": {"pattern":"MM/dd/yy"}}' ></oj-input-date>
+
+  <oj-input-text label-hint=" no of days" value="{{ $variables.noofdays }}"></oj-input-text>
+
+</oj-form-layout>
+</div>
+
+<div>
+
+</div>

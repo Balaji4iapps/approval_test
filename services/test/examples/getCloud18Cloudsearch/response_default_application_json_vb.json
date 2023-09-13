@@ -1,0 +1,98 @@
+{
+    "items": [
+        {
+            "cloud_id": 420,
+            "cloud_name": "singh"
+        },
+        {
+            "cloud_id": 360,
+            "cloud_name": "yuvaraj singh"
+        },
+        {
+            "cloud_id": 430,
+            "cloud_name": "G-India"
+        },
+        {
+            "cloud_id": 440,
+            "cloud_name": "G-India"
+        },
+        {
+            "cloud_id": 120,
+            "cloud_name": "Verzo Cloud"
+        },
+        {
+            "cloud_id": 130,
+            "cloud_name": "Hecto Cloud"
+        },
+        {
+            "cloud_id": 150,
+            "cloud_name": "a"
+        },
+        {
+            "cloud_id": 160,
+            "cloud_name": "Digital Ocean"
+        },
+        {
+            "cloud_id": 300,
+            "cloud_name": "test 120120"
+        },
+        {
+            "cloud_id": 20,
+            "cloud_name": "GOOGLE CLOUD"
+        },
+        {
+            "cloud_id": 30,
+            "cloud_name": "Amazon Web Service"
+        },
+        {
+            "cloud_id": 50,
+            "cloud_name": "IBM CLOUD"
+        },
+        {
+            "cloud_id": 40,
+            "cloud_name": "MICRSOFT AZURE"
+        },
+        {
+            "cloud_id": 450,
+            "cloud_name": "G-India"
+        },
+        {
+            "cloud_id": 250,
+            "cloud_name": "G-India"
+        },
+        {
+            "cloud_id": 10,
+            "cloud_name": "ORACLE CLOUD"
+        },
+        {
+            "cloud_id": 110,
+            "cloud_name": "TEST"
+        },
+        {
+            "cloud_id": 290,
+            "cloud_name": "TERRRSTCLOUD"
+        },
+        {
+            "cloud_id": 200,
+            "cloud_name": null
+        },
+        {
+            "cloud_id": 190,
+            "cloud_name": "hexagan"
+        }
+    ],
+    "hasMore": false,
+    "limit": 0,
+    "offset": 0,
+    "count": 20,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://gd4d01c5ed5180a-dyrdbtestadw.adb.me-dubai-1.oraclecloudapps.com/ords/dyrords/cloud18/cloudsearch"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://gd4d01c5ed5180a-dyrdbtestadw.adb.me-dubai-1.oraclecloudapps.com/ords/dyrords/metadata-catalog/cloud18/item"
+        }
+    ]
+}

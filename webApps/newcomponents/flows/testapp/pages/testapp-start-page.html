@@ -1,0 +1,58 @@
+<div class="oj-flex">
+  <div class="oj-panel oj-flex-item oj-sm-12 oj-md-12 oj-shadow">
+    <!-- <div class="oj-flex"> -->
+      <div >
+        <oj-form-layout label-edge='start' columns="1" label-width="40%">
+          <oj-select-single label-hint="Cloud Search " style="width: 50rem;" data="[[ $variables.unitlov ]]"
+            item-text="cloud_name" value="{{ $variables.searchvalue }}" placeholder="Cloud Search"
+            on-value-item-changed="[[$listeners.selectValueItem]]">
+<template slot="collectionTemplate" data-oj-as="collection">
+<!-- <oj-input-text label-hint="Search" placeholder="Search" style="width: 19rem;"  -->
+<!-- class="oj-form-control-full-width"
+></oj-input-text> -->
+<oj-table scroll-policy="loadMoreOnScroll" horizontal-grid-visible="enabled"
+                  vertical-grid-visible="enabled" selection-mode='{"row": "single"}' 
+                  columns-default='{"resizable": "disabled","sortable": "disabled"}' 
+                  class="oj-select-results" 
+                  columns='[{"field":"cloud_id","headerText":"Cloud Id"},
+                  {"field":"cloud_name","headerText":"Cloud Name"}
+                  ]' 
+                on-oj-row-action="[[collection.handleRowAction]]"
+                data="[[collection.data]]" selected.row="[[collection.selected]]"
+                current-row="{{collection.currentRow}}" display="grid"></oj-table>
+</template>
+</oj-select-single>
+        </oj-form-layout>
+
+<div >
+<oj-button style="margin-right:0.5%" chroming="solid" label="Search" on-oj-action="[[$listeners.buttonAction]]" >
+
+</oj-button>
+<oj-button chroming="solid" style="margin-left:0.5%;margin-right:0.5%;" label="Reset"
+  on-oj-action="[[$listeners.buttonAction2]]">
+
+</oj-button>
+</div>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+ <br>
+<div class="oj-flex">
+  <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+    columns='[    {        "headerText": "Cloud Name",        "field": "cloud_name"    },
+        {        "headerText": "Cloud Provider",        "field": "cloud_provider",        "width": 150    },
+            {        "headerText": "Contact Number",        "field": "contact_number"    }, 
+              {        "headerText": "Email Id",        "field": "email_id"    }, 
+                 {        "headerText": "Founder Name",        "field": "founder_name",        "width": 150    },  
+                   {        "headerText": "Started Year",        "field": "started_year"    },  
+                     {        "headerText": "Business Type",        "field": "business_type",        "width":150    }]'
+    edit-mode="rowEdit" display="grid" data="[[ $variables.cloudtab ]]">
+    
+  </oj-table><oj-paging-control class="oj-flex-item oj-sm-12 oj-md-12" data="[[ $variables.cloudtab ]]" page-size="6"></oj-paging-control>
+</div>
+
+
+
+
+

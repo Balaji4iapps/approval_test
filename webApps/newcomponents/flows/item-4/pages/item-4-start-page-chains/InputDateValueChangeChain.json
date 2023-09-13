@@ -1,0 +1,55 @@
+{
+  "description": "",
+  "root": "fireNotificationValue",
+  "actions": {
+    "callFunctionAddOneMonth": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "addOneMonth",
+        "params": [
+          "{{ $variables.value }}"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesOnemonthFromSysDate"
+      }
+    },
+    "assignVariablesOnemonthFromSysDate": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.onemonthFromSysDate": {
+          "source": "{{ $chain.results.callFunctionAddOneMonth }}"
+        }
+      },
+      "outcomes": {
+        "success": "fireNotification"
+      }
+    },
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "message": "[[ $chain.results.callFunctionAddOneMonth ]]",
+        "summary": "[[ $chain.results.callFunctionAddOneMonth ]]"
+      }
+    },
+    "fireNotificationValue": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $variables.value ]]"
+      },
+      "outcomes": {
+        "success": "callFunctionAddOneMonth"
+      }
+    }
+  },
+  "variables": {
+    "value": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

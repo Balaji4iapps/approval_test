@@ -1,0 +1,13 @@
+{
+  "description": "",
+  "root": "navigateToActionCardArrayList",
+  "actions": {
+    "navigateToActionCardArrayList": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "action-card-array-list"
+      }
+    }
+  },
+  "variables": {}
+}

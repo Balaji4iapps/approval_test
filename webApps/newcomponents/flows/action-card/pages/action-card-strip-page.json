@@ -1,0 +1,41 @@
+{
+  "title": "action card strip",
+  "description": "",
+  "variables": {
+    "arrayvalues": {
+      "type": [
+        {
+          "cloud_id": "number",
+          "cloud_name": "number"
+        }
+      ]
+    }
+  },
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-action-card": {
+        "path": "ojs/ojactioncard"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-film-strip": {
+        "path": "ojs/ojfilmstrip"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      }
+    }
+  }
+}

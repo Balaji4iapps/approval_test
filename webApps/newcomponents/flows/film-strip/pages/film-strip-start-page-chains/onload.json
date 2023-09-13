@@ -1,0 +1,48 @@
+{
+  "root": "callRestGetCloud18Cloudsearch",
+  "description": "",
+  "variables": {},
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetCloud18Cloudsearch.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callRestGetCloud18Cloudsearch": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "test/getCloud18Cloudsearch"
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "assignVariablesClouds"
+      }
+    },
+    "assignVariablesClouds": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.clouds": {
+          "source": "{{ $chain.results.callRestGetCloud18Cloudsearch.body.items }}",
+          "mapping": {
+            "$target.id": "$source.cloud_id",
+            "$target.title": "$source.cloud_provider"
+          }
+        }
+      },
+      "outcomes": {
+        "success": "callComponentFilmstripRefresh"
+      }
+    },
+    "callComponentFilmstripRefresh": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('filmstrip') }}",
+        "method": "refresh"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "component-dependencies": {
+    "oj-sp": {
+      "version": "2301.2.0",
+      "components": {
+        "common-util": "2301.2.0",
+        "card-footer": "2301.2.0",
+        "common-strings": "2301.2.0",
+        "common": "2301.2.0",
+        "profile-card": "2301.2.0"
+      }
+    },
+    "oj-dynamic": {
+      "version": "13.1.4",
+      "components": {
+        "shared": "13.1.4",
+        "utils": "13.1.4",
+        "providers": "13.1.4"
+      }
+    },
+    "oj-dyn": {
+      "version": "13.1.4",
+      "components": {
+        "container": "13.1.4",
+        "form": "13.1.4",
+        "bind-section": "13.1.4",
+        "bind-field": "13.1.4"
+      }
+    }
+  }
+}

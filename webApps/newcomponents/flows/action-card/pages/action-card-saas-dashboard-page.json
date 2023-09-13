@@ -1,0 +1,114 @@
+{
+  "title": "action card saas dashboard",
+  "description": "",
+  "variables": {
+    "DashBoardArray": {
+      "type": [
+        {
+          "covid vaccination": "string",
+          "performance": "string"
+
+        }
+      ]
+    },
+    "getCloud18CloudsearchListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "test/getCloud18Cloudsearch",
+        "keyAttributes": "cloud_id",
+        "itemsPath": "items",
+        "responseType": "getCloud18CloudsearchResponse"
+      }
+    },
+    "getCloud18CloudsearchListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "test/getCloud18Cloudsearch",
+        "keyAttributes": "cloud_id",
+        "itemsPath": "items",
+        "responseType": "getCloud18CloudsearchResponse2"
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getCloud18CloudsearchResponse": {
+      "endpoint": "getCloud18Cloudsearch",
+      "service": "test",
+      "path": "response"
+    },
+    "@decorators.getCloud18CloudsearchResponse2": {
+      "endpoint": "getCloud18Cloudsearch",
+      "service": "test",
+      "path": "response"
+    },
+    "getCloud18CloudsearchResponse": {
+      "items": [
+        {
+          "business_type": "string",
+          "cloud_id": "number",
+          "cloud_name": "string",
+          "cloud_provider": "string",
+          "contact_number": "string",
+          "email_id": "string",
+          "founder_name": "string",
+          "started_year": "string"
+        }
+      ]
+    },
+    "getCloud18CloudsearchResponse2": {
+      "items": [
+        {
+          "cloud_id": "number",
+          "cloud_name": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "hyperlinkClick": {
+      "chains": [
+        {
+          "chainId": "HyperlinkClickChain",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-masonry-layout": {
+        "path": "ojs/ojmasonrylayout"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+
+    }
+  }
+}

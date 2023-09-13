@@ -1,0 +1,69 @@
+{
+  "title": "Item 4",
+  "description": "",
+  "variables": {
+    "onemonthFromSysDate": {
+      "type": "string"
+    },
+    "sysDateVar": {
+      "type": "string",
+      "defaultValue": "[[ $functions.getSystemDate() ]]"
+    }
+
+  },
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "ojInputDate20692696322Value": {
+      "chains": [
+        {
+          "chainId": "InputDateValueChangeChain",
+          "parameters": {
+            "value": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chainId": "Onload"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-date-time": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      }
+
+    },
+    "modules": {
+      "ojValidationDateTime": {
+        "path": "ojs/ojvalidation-datetime"
+      }
+    }
+  }
+}

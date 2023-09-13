@@ -1,0 +1,13 @@
+{
+  "description": "",
+  "root": "navigateToActionCardSaasDashboard",
+  "actions": {
+    "navigateToActionCardSaasDashboard": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "action-card-saas-dashboard"
+      }
+    }
+  },
+  "variables": {}
+}

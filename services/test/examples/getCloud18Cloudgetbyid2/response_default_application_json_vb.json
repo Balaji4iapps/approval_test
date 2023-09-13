@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "cloud_id": 20,
+            "cloud_name": "GOOGLE CLOUD",
+            "cloud_provider": "GOOGLE",
+            "email_id": "CLOUDSERVICE@GOOGLE.COM",
+            "contact_number": "1200340056",
+            "business_type": "International",
+            "started_year": "2000-11-17T00:00:00Z",
+            "founder_name": "Larry Page"
+        }
+    ],
+    "hasMore": false,
+    "limit": 0,
+    "offset": 0,
+    "count": 1,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://gd4d01c5ed5180a-dyrdbtestadw.adb.me-dubai-1.oraclecloudapps.com/ords/dyrords/cloud18/cloudgetbyid?pcloud_id=20"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://gd4d01c5ed5180a-dyrdbtestadw.adb.me-dubai-1.oraclecloudapps.com/ords/dyrords/metadata-catalog/cloud18/item"
+        }
+    ]
+}

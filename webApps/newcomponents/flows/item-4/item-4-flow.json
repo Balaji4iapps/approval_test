@@ -1,0 +1,8 @@
+{
+  "id": "item-4",
+  "description": "Flow main",
+  "defaultPage": "item-4-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

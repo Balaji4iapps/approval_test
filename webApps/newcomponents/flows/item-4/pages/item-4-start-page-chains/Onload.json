@@ -1,0 +1,71 @@
+{
+  "root": "fireNotificationSysDateVar",
+  "description": "",
+  "variables": {},
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetCloud18Cloudsearch.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callRestGetCloud18Cloudsearch": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "test/getCloud18Cloudsearch"
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "if3"
+      }
+    },
+    "forEach": {
+      "module": "vb/action/builtin/forEachAction",
+      "parameters": {
+        "actionId": "if",
+        "items": "{{ $chain.results.callRestGetCloud18Cloudsearch.body.items }}",
+        "mode": "serial"
+      }
+    },
+    "fireNotification2": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $current.data.cloud_name ]]",
+        "displayMode": "transient",
+        "type": "info"
+      }
+    },
+    "if": {
+      "module": "vb/action/builtin/ifAction",
+      "parameters": {
+        "condition": "[[ $current.index >=($current.index-5) ]]"
+      },
+      "outcomes": {
+        "true": "fireNotification2"
+      }
+    },
+    "if3": {
+      "module": "vb/action/builtin/ifAction",
+      "parameters": {
+        "condition": "1 == 1"
+      },
+      "outcomes": {
+        "false": "forEach"
+      }
+    },
+    "fireNotificationSysDateVar": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $page.variables.sysDateVar ]]"
+      },
+      "outcomes": {
+        "success": "callRestGetCloud18Cloudsearch"
+      }
+    }
+  }
+}

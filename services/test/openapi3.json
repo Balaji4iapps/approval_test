@@ -1,0 +1,420 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Cloud ",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://gd4d01c5ed5180a-dyrdbtestadw.adb.me-dubai-1.oraclecloudapps.com/ords/dyrords",
+            "description": "Ords Dyrords"
+        }
+    ],
+    "paths": {
+        "/cloud18/cloudsearch": {
+            "get": {
+                "operationId": "getCloud18Cloudsearch",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCloud18Cloudsearch"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getCloud18Cloudsearch/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/cloud18/cloudgetbyid": {
+            "get": {
+                "operationId": "getCloud18Cloudgetbyid2",
+                "parameters": [
+                    {
+                        "name": "pcloud_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCloud18Cloudgetbyid"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getCloud18Cloudgetbyid2/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/cloud18/headercloud/{P_METHOD}/{P_PRIMARYKEY}": {
+            "parameters": [
+                {
+                    "name": "P_METHOD",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "P_PRIMARYKEY",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "operationId": "PostCompany",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostCloud18HeadercloudP_METHODP_PRIMARYKEYRequest"
+                            },
+                            "examples": {
+                                "vb": {
+                                    "externalValue": "./examples/PostCompany/request_application_json_vb.json"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostCloud18HeadercloudP_METHODP_PRIMARYKEYResponse"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/PostCompany/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/cloud18/approvalhistorygetall": {
+            "get": {
+                "operationId": "getCloud18Approvalhistorygetall",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCloud18Approvalhistorygetall"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getCloud18Approvalhistorygetall/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetCloud18Cloudsearch": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "cloud_id": {
+                                    "type": "integer"
+                                },
+                                "cloud_name": {
+                                    "type": "string",
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "GetCloud18Cloudgetbyid": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "cloud_id": {
+                                    "type": "integer"
+                                },
+                                "cloud_name": {
+                                    "type": "string"
+                                },
+                                "cloud_provider": {
+                                    "type": "string"
+                                },
+                                "email_id": {
+                                    "type": "string"
+                                },
+                                "contact_number": {
+                                    "type": "string"
+                                },
+                                "business_type": {
+                                    "type": "string"
+                                },
+                                "started_year": {
+                                    "type": "string"
+                                },
+                                "founder_name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "PostCloud18HeadercloudP_METHODP_PRIMARYKEYRequest": {
+                "type": "object",
+                "properties": {
+                    "cloud_id": {
+                        "type": "integer"
+                    },
+                    "cloud_name": {
+                        "type": "string"
+                    },
+                    "cloud_provider": {
+                        "type": "string"
+                    },
+                    "email_id": {
+                        "type": "string"
+                    },
+                    "contact_number": {
+                        "type": "string"
+                    },
+                    "business_type": {
+                        "type": "string"
+                    },
+                    "started_year": {
+                        "type": "string"
+                    },
+                    "founder_name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PostCloud18HeadercloudP_METHODP_PRIMARYKEYResponse": {
+                "type": "object",
+                "properties": {
+                    "p_err_code": {
+                        "type": "string"
+                    },
+                    "p_err_msg": {
+                        "type": "string"
+                    },
+                    "p_primarykey": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "GetCloud18Approvalhistorygetall": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "action_history_id": {
+                                    "type": "integer"
+                                },
+                                "object_version_number": {
+                                    "type": "integer"
+                                },
+                                "transaction_source": {
+                                    "type": "string"
+                                },
+                                "transaction_type": {
+                                    "type": "string"
+                                },
+                                "transaction_id": {
+                                    "type": "integer"
+                                },
+                                "transaction_num": {
+                                    "type": "string"
+                                },
+                                "action_sequence_num": {
+                                    "type": "integer"
+                                },
+                                "action_level": {
+                                    "type": "integer"
+                                },
+                                "action_code": {
+                                    "type": "string"
+                                },
+                                "submission_date": {
+                                    "type": "string"
+                                },
+                                "action_date": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "action_comments": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "requester_user_id": {
+                                    "type": "integer"
+                                },
+                                "response_user_id": {
+                                    "type": "integer"
+                                },
+                                "created_by": {
+                                    "type": "string"
+                                },
+                                "creation_date": {
+                                    "type": "string"
+                                },
+                                "last_updated_by": {
+                                    "type": "string"
+                                },
+                                "last_update_date": {
+                                    "type": "string"
+                                },
+                                "last_update_login": {
+                                    "type": "string"
+                                },
+                                "approved_by": {
+                                    "type": "integer"
+                                },
+                                "category": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

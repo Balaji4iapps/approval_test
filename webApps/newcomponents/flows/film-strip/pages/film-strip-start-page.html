@@ -1,0 +1,25 @@
+<!-- <div class="oj-flex">
+  <oj-film-strip aria-label="Film Strip" max-items-per-page="1" class="oj-flex-item oj-sm-12 oj-md-12" id="filmstrip"
+    current-item="{{ $variables.currentcloud }}">
+    <oj-bind-for-each data="[[ $variables.clouds ]]">
+      <template data-oj-as="data">
+       <span :class="[[ $application.responsive.smOnly ? 'oj-typography-body-md' : 'oj-typography-body-xl' ]]">
+                    <oj-bind-text value="[[ $current.data.title  ]]"></oj-bind-text>
+                  </span>
+      </template>
+    </oj-bind-for-each>
+  </oj-film-strip>
+</div>
+<div>
+  <oj-table scroll-policy="loadMoreOnScroll"
+    columns='[{"headerText":"cloud_name","field":"cloud_name"},{"headerText":"cloud_provider","field":"cloud_provider"},{"headerText":"email_id","field":"email_id"},{"headerText":"founder_name","field":"founder_name"}]'
+    data="[[$variables.getCloud18Cloudgetbyid2ListSDP]]" selection-mode.row="single" selection-mode.column="single"
+    edit-mode="rowEdit" display="grid" horizontal-grid-visible="enabled" vertical-grid-visible="enabled"></oj-table>
+</div> --><div class="oj-flex">
+  <oj-dyn-container layout="containerLayout1" layout-provider="[[ $metadata.dynamicContainerMetadata.provider ]]"
+    class="oj-flex-item oj-sm-12 oj-md-12"></oj-dyn-container>
+</div>
+<div class="oj-flex">
+  <oj-train steps='[{"id": "0","label": "Start"},{"id": "1","label": "Step Two"},{"id": "2","label": "Finish"}]'
+    class="oj-flex-item oj-sm-12 oj-md-12"></oj-train>
+</div>

@@ -1,0 +1,21 @@
+{
+  "description": "",
+  "root": "fireNotificationCity",
+  "actions": {
+    "fireNotificationCity": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "message": "[[ $variables.value ]]",
+        "summary": "[[ $page.variables.City ]]"
+      }
+    }
+  },
+  "variables": {
+    "value": {
+      "required": true,
+      "type": "any[]",
+      "input": "fromCaller"
+    }
+  }
+}

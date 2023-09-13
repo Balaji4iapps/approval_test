@@ -1,0 +1,13 @@
+{
+  "description": "",
+  "root": "navigateToActionCardStrip",
+  "actions": {
+    "navigateToActionCardStrip": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "action-card-strip"
+      }
+    }
+  },
+  "variables": {}
+}

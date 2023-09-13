@@ -1,0 +1,59 @@
+{
+  "description": "",
+  "root": "fireNotificationKey",
+  "actions": {
+    "switchKey": {
+      "module": "vb/action/builtin/switchAction",
+      "parameters": {
+        "caseValue": "[[ $variables.key ]]",
+        "possibleValues": [
+          "120",
+          "130"
+        ]
+      },
+      "outcomes": {
+        "120": "navigateToActionCardStart",
+        "130": "navigateToActionCardTest"
+      }
+    },
+    "fireNotificationKey": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $variables.key ]]"
+      },
+      "outcomes": {
+        "success": "switchKey"
+      }
+    },
+    "navigateToActionCardStart": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "action-card-circle"
+      }
+    },
+    "navigateToActionCardTest": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "action-card-rectangle"
+      }
+    }
+  },
+  "variables": {
+    "key": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    },
+    "index": {
+      "required": true,
+      "type": "number",
+      "input": "fromCaller"
+    },
+    "current": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

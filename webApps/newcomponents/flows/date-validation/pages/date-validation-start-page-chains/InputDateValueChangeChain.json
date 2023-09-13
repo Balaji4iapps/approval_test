@@ -1,0 +1,36 @@
+{
+  "description": "",
+  "root": "callFunctionNoOfDaysBtnTwoDays",
+  "actions": {
+
+    "assignVariablesNoofdays": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.noofdays": {
+          "source": "{{ $chain.results.callFunctionNoOfDaysBtnTwoDays }}"
+        }
+      }
+    },
+    "callFunctionNoOfDaysBtnTwoDays": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "noOfDaysBtnTwoDays",
+        "params": [
+          "{{ $page.variables.Start_Date }}",
+          "{{ $page.variables.end_date }}"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesNoofdays"
+      }
+    }
+  },
+  "variables": {
+    "value": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

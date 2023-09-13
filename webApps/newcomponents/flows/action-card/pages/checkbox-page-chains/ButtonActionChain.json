@@ -1,0 +1,38 @@
+{
+  "description": "",
+  "root": "callRestPostCompany",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestPostCompany.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callRestPostCompany": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "test/PostCompany",
+        "uriParams": {
+          "P_METHOD": "POST",
+          "P_PRIMARYKEY": "0"
+        },
+        "body": "{{ $page.variables.PostCompanyVar }}"
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "fireNotification3"
+      }
+    },
+    "fireNotification3": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestPostCompany.body.p_err_msg ]]"
+      }
+    }
+  },
+  "variables": {}
+}

@@ -1,0 +1,51 @@
+{
+  "description": "",
+  "root": "callRestGetCloud18Cloudgetbyid2",
+  "actions": {
+
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetCloud18Cloudgetbyid2.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callRestGetCloud18Cloudgetbyid2": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "test/getCloud18Cloudgetbyid2",
+        "uriParams": {
+          "pcloud_id": "{{ $page.variables.searchvalue }}"
+        }
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "callFunctionPagingSearchData"
+      }
+    },
+    "callFunctionPagingSearchData": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "pagingSearchData",
+        "params": [
+          "{{ $chain.results.callRestGetCloud18Cloudgetbyid2.body.items }}"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesCloudtab"
+      }
+    },
+    "assignVariablesCloudtab": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.cloudtab": {
+          "source": "{{ $chain.results.callFunctionPagingSearchData }}"
+        }
+      }
+    }
+  },
+  "variables": {}
+}

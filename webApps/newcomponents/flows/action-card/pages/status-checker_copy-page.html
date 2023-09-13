@@ -1,0 +1,83 @@
+<br>
+
+
+<div class="oj-panel oj-panel-shadow-md oj-selected">
+     <oj-collapsible expanded="true">
+          <div id="sampleDemo" class="demo-padding demo-container">
+               <div id="componentDemoContent" style="width: auto; min-width: auto">
+                    <div style="width:auto">
+                         <oj-bind-for-each data="[[ $variables.newdataADP ]]">
+                              <template>
+                                   <!-- 1 -->
+                                   <oj-bind-if test='[[ $current.data.action_code == "Approved" ]]'>
+<button style="background-color:green;">
+<oj-bind-text style= "top:10px; margin-left:50px ; " value="[[ $current.data.action_sequence_num ]]"></oj-bind-text>
+<br>
+<oj-bind-text value="[[ $current.data.action_code ]]" style=' bottom:10px; margin-left:50px "; '></oj-bind-text>
+</button>
+                                        <!-- <oj-bind-if test="[[ $current.index !=  $variables.index ]]">  -->
+
+                                        <span class="oj-ux-ico-arrow-right"></span>
+
+                                        <!-- </oj-bind-if>  -->
+                                   </oj-bind-if>
+
+                                   <!-- 2 -->
+                                   <oj-bind-if test='[[ $current.data.action_code == "Closed" ]]'>
+
+                                        <button style="background-color:red;">
+
+            <oj-bind-text style= "top:10px; margin-left:50px ; " value="[[ $current.data.action_sequence_num ]]"></oj-bind-text>
+<br>
+ <oj-bind-text value="[[ $current.data.action_code ]]" style=' bottom:10px; margin-left:50px "; '></oj-bind-text>
+
+</button>
+
+                                        <span class="oj-ux-ico-arrow-right"></span>
+
+                                   </oj-bind-if>
+
+                                   <!-- 3 -->
+                                   <oj-bind-if test='[[ $current.data.action_code == "Pending" ]]'>
+
+                                        <button style="background-color:blue;">
+
+            <oj-bind-text style= "top:10px; margin-left:50px ; " value="[[ $current.data.action_sequence_num ]]"></oj-bind-text>
+<br>
+ <oj-bind-text value="[[ $current.data.action_code ]]" style=' bottom:10px; margin-left:50px "; '></oj-bind-text>
+
+      </button>
+                                        <span class="oj-ux-ico-arrow-right"></span>
+                                   </oj-bind-if>
+
+                                   <!-- 4 -->
+
+                                   <oj-bind-if test='[[ $current.data.action_code == "Open" ]]'>
+
+                                        <button style="background-color:yellow;">
+
+            <oj-bind-text style= "top:10px; margin-left:50px ; " value="[[ $current.data.action_sequence_num ]]"></oj-bind-text>
+
+<br>
+ <oj-bind-text value="[[ $current.data.action_code ]]" style=' bottom:10px; margin-left:50px "; '></oj-bind-text>
+      </button>
+
+                                        <span class="oj-ux-ico-arrow-right" ></span>
+                                   </oj-bind-if>
+
+                              </template>
+
+                              <br>
+                         </oj-bind-for-each>
+
+                         <button>
+                          <oj-bind-text style=' bottom:10px; margin-left:50px "; '>END</oj-bind-text>
+                          </button>
+                    </div>
+               </div>
+          </div>
+          <h6 class="oj-header" slot="header">Approval Flow</h6>
+
+     </oj-collapsible>
+
+</div>

@@ -1,0 +1,8 @@
+{
+  "id": "testapp",
+  "description": "Flow main",
+  "defaultPage": "testapp-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

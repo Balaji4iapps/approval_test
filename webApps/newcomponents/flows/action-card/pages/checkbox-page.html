@@ -1,0 +1,34 @@
+<div class="oj-flex">
+  <oj-label id="oj-label-113046239-1" class="oj-flex-item oj-sm-12 oj-md-4">Checkbox Set</oj-label>
+  <oj-checkboxset labelled-by="oj-label-113046239-1" class="oj-flex-item oj-sm-12 oj-md-8"
+    value="{{ $variables.PostCompanyVar.business_type }}">
+    <oj-option value="CHN">Chennai</oj-option>
+    <oj-option value="MDU">Madurai</oj-option>
+    <oj-option value="SLM">Salem</oj-option>
+  </oj-checkboxset>
+</div>
+
+
+
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12">
+    <oj-bind-text value="[[ $variables.PostCompanyVar.business_type ]]"></oj-bind-text>
+  </div>
+</div>
+
+
+
+
+<div class="oj-flex">
+  <oj-label id="oj-label-113046239-2" class="oj-flex-item oj-sm-12 oj-md-2">Radio Button Set</oj-label>
+  <oj-radioset labelled-by="oj-label-113046239-2" class="oj-flex-item oj-sm-12 oj-md-4">
+    <oj-option value="option1">Option 1</oj-option>
+    <oj-option value="option2">option2</oj-option>
+  </oj-radioset>
+</div>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-1"></div>
+  <div class="oj-flex-item oj-sm-12 oj-md-2">
+    <oj-button label="Submit" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "description": "",
+  "root": "assignVariablesFormData",
+  "actions": {
+    "assignVariablesFormData": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.form_data": {
+          "source": {
+            "code": "{{ $variables.rowData.action_code }}",
+            "action_comments": "{{ $variables.rowData.action_comments }}",
+            "action_date": "{{ $variables.rowData.action_date }}",
+            "action_level": "{{ $variables.rowData.action_level }}",
+            "approved_by": "{{ $variables.rowData.approved_by }}",
+            "requester_user_id": "{{ $variables.rowData.requester_user_id }}",
+            "response_user_id": "{{ $variables.rowData.response_user_id }}",
+            "submission_date": "{{ $variables.rowData.submission_date }}",
+            "transaction_num": "{{ $variables.rowData.transaction_num }}"
+          },
+          "reset": "none",
+          "auto": "always"
+        }
+      }
+    }
+  },
+  "variables": {
+    "rowKey": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    },
+    "rowData": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

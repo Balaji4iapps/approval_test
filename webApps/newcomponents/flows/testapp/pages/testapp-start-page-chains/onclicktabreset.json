@@ -1,0 +1,26 @@
+{
+  "description": "",
+  "root": "resetVariablesCloudtab",
+  "actions": {
+    "resetVariablesCloudtab": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.cloudtab",
+          "$page.variables.unitlov",
+          "$page.variables.searchvalue"
+        ]
+      },
+      "outcomes": {
+        "success": "callChainOnload"
+      }
+    },
+    "callChainOnload": {
+      "module": "vb/action/builtin/callChainAction",
+      "parameters": {
+        "id": "onload"
+      }
+    }
+  },
+  "variables": {}
+}

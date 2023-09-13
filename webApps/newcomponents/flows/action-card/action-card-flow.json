@@ -1,0 +1,8 @@
+{
+  "id": "action-card",
+  "description": "Flow main",
+  "defaultPage": "status-checker_copy",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

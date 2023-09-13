@@ -1,0 +1,8 @@
+{
+  "id": "date-validation",
+  "description": "Flow main",
+  "defaultPage": "date-validation-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

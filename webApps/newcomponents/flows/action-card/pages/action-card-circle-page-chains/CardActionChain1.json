@@ -1,0 +1,13 @@
+{
+  "description": "",
+  "root": "navigateToActionCardRectangle",
+  "actions": {
+    "navigateToActionCardRectangle": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "action-card-rectangle"
+      }
+    }
+  },
+  "variables": {}
+}

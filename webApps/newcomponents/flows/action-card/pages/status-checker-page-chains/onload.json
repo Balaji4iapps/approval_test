@@ -1,0 +1,54 @@
+{
+  "root": "callRestGetCloud18Approvalhistorygetall",
+  "description": "",
+  "variables": {},
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetCloud18Approvalhistorygetall.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callComponent_Refresh": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('12') }}",
+        "method": "refresh"
+      }
+    },
+    "callRestGetCloud18Approvalhistorygetall": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "test/getCloud18Approvalhistorygetall"
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "assignVariablesNewdataADP"
+      }
+    },
+    "assignVariablesNewdataADP": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.newdataADP": {
+          "source": {
+            "data": "{{ $chain.results.callRestGetCloud18Approvalhistorygetall.body.items }}"
+          },
+          "reset": "none",
+          "auto": "always"
+        },
+        "$page.variables.count": {
+          "source": "{{ $chain.results.callRestGetCloud18Approvalhistorygetall.body.count }}"
+        },
+        "$page.variables.index": {
+          "source": "{{ $chain.results.callRestGetCloud18Approvalhistorygetall.body.count - 1 }}"
+        }
+      },
+      "outcomes": {
+        "success": "callComponent_Refresh"
+      }
+    }
+  }
+}

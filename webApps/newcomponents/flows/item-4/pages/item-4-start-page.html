@@ -1,0 +1,16 @@
+<div></div><oj-form-layout label-edge='start'>
+  
+
+
+  
+  <oj-input-date 
+    converter='{"type": "datetime", "options": {"pattern":"dd-MM-yyyy"}}' value="{{ $variables.sysDateVar }}"
+    label-hint="date1"></oj-input-date>
+  <br>
+  
+  <oj-input-date value="{{ $variables.onemonthFromSysDate }}"
+    on-value-changed="[[$listeners.ojInputDate20692696322Value]]"  label-hint="date2" converter='{"type": "datetime", "options": {"pattern":"MM/dd/yy"}}'></oj-input-date>
+
+
+    </oj-form-layout>
+

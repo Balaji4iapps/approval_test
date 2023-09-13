@@ -1,0 +1,70 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "end_date": {
+      "type": "string"
+    },
+    "fromDate": {
+      "type": "string"
+    },
+    "nextyearSysDate": {
+      "type": "string",
+      "defaultValue": "[[ $variables.nextyearSysDate ]]"
+    },
+    "noofdays": {
+      "type": "string"
+    },
+    "Start_Date": {
+      "type": "string"
+    },
+    "today1month": {
+      "type": "string",
+      "defaultValue": "[[ $functions.nextMonthSysdate() ]]"
+    }
+
+  },
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "inputDateValue": {
+      "chains": [
+        {
+          "chainId": "InputDateValueChangeChain",
+          "parameters": {
+            "value": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      }
+    },
+    "modules": {
+      "ojValidationDateTime": {
+        "path": "ojs/ojvalidation-datetime"
+      }
+    }
+  }
+}

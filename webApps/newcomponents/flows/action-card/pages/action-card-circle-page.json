@@ -1,0 +1,65 @@
+{
+  "title": "Action-Card",
+  "description": "",
+  "variables": {},
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "cardAction": {
+      "chains": [
+        {
+          "chainId": "CardActionChain"
+        }
+      ]
+    },
+    "cardAction2": {
+      "chains": [
+        {
+          "chainId": "CardActionChain1"
+        }
+      ]
+    },
+    "cardAction3": {
+      "chains": [
+        {
+          "chainId": "CardActionChain2"
+        }
+      ]
+    },
+    "cardAction4": {
+      "chains": [
+        {
+          "chainId": "CardActionChain3"
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-action-card": {
+        "path": "ojs/ojactioncard"
+      },
+      "oj-film-strip": {
+        "path": "ojs/ojfilmstrip"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-sp-profile-card": {
+        "path": "oj-sp/profile-card/loader"
+      }
+
+    }
+  }
+}

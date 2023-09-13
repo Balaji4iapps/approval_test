@@ -1,0 +1,152 @@
+{
+  "title": "testapp",
+  "description": "",
+  "variables": {
+    "cloudtab": {
+      "type": "any"
+    },
+    "getCloud18CloudsearchListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "test/getCloud18Cloudsearch",
+        "keyAttributes": "cloud_id",
+        "itemsPath": "items",
+        "responseType": "getCloud18CloudsearchResponse"
+      }
+    },
+    "searchvalue": {
+      "type": "string"
+    },
+    "tsestvar": {
+      "type": "any",
+      "defaultValue": "CHN"
+    },
+    "unitlov": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "responseType": "getCloud18Cloudsearch",
+        "itemsPath": "items",
+        "keyAttributes": "cloud_id",
+        "fetchChainId": "getCloud18CloudsearchFetchAction"
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getCloud18Cloudsearch": {
+      "endpoint": "getCloud18Cloudsearch",
+      "service": "test",
+      "path": "response"
+    },
+    "@decorators.getCloud18CloudsearchResponse": {
+      "endpoint": "getCloud18Cloudsearch",
+      "service": "test",
+      "path": "response"
+    },
+    "getCloud18Cloudsearch": {
+      "items": [
+        {
+          "business_type": "string",
+          "cloud_id": "number",
+          "cloud_name": "string",
+          "cloud_provider": "string",
+          "contact_number": "string",
+          "email_id": "string",
+          "founder_name": "string",
+          "started_year": "string"
+        }
+      ]
+    },
+    "getCloud18CloudsearchResponse": {
+      "items": [
+        {
+          "business_type": "string",
+          "cloud_id": "number",
+          "cloud_name": "string",
+          "cloud_provider": "string",
+          "contact_number": "string",
+          "email_id": "string",
+          "founder_name": "string",
+          "started_year": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chainId": "onclicksearch"
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chainId": "onclicktabreset"
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chainId": "SelectValueItemChangeChain",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chainId": "onload"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-checkboxset": {
+        "path": "ojs/ojcheckboxset"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-paging-control": {
+        "path": "ojs/ojpagingcontrol"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<!-- <div class="oj-flex">
+  <oj-masonry-layout class="oj-flex-item oj-sm-12 oj-md-12">
+    <div class="oj-masonrylayout-tile-1x1">
+
+
+
+       <h6>Performance</h6>
+    <!-- <oj-form-layout label-edge='start'> -->
+      
+ <!-- <a target="_blank" class="oj-link" >Mangement</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Covid</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+ <a target="_blank" class="oj-link" >Vaccination</a><img :src="[[ $flow.path + 'resources/images/disable_delete.jpg' ]]" width="20" height="20"> <br>
+        <h6>allowance</h6>
+    </div>
+  </oj-masonry-layout>
+</div> --><div class="oj-flex">
+  <oj-masonry-layout class="oj-flex-item oj-sm-12 oj-md-12">
+    <div class="oj-masonrylayout-tile-2x3">
+
+      <oj-list-view class="oj-flex-item oj-sm-12 oj-md-12 oj-listview-full-width"
+        data="[[$variables.getCloud18CloudsearchListSDP]]">
+    <template slot="itemTemplate">
+        <div class="oj-flex">
+            <div class="oj-flex-item oj-sm-12 oj-md-6">
+                 <a target="_blank" value="[[ $current.data.cloud_name ]]" class="oj-link oj-flex-item oj-sm-12 oj-md-4"><oj-bind-text value="[[ $current.data.cloud_name ]]"></oj-bind-text></a>
+            </div>
+           
+        </div>
+    </template>
+  </oj-list-view>
+    </div>
+    <div class="oj-masonrylayout-tile-1x1"></div>
+  </oj-masonry-layout>
+</div> 

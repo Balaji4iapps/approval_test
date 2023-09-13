@@ -1,0 +1,8 @@
+{
+  "id": "list",
+  "description": "Flow main",
+  "defaultPage": "list-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

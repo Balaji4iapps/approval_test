@@ -1,0 +1,82 @@
+{
+  "title": "checkbox",
+  "description": "",
+  "variables": {
+    "City": {
+      "type": "object[]"
+    },
+    "PostCompanyVar": {
+      "type": "PostCompany",
+      "defaultValue": {
+        "cloud_name": "G-India",
+        "cloud_provider": "G-india",
+        "contact_number": "678",
+        "email_id": "baktha@gmail.com",
+        "founder_name": "JB",
+        "started_year": "1997"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.PostCompany": {
+      "endpoint": "PostCompany",
+      "service": "test",
+      "path": "request"
+    },
+    "PostCompany": {
+      "business_type": "object[]",
+      "cloud_id": "number",
+      "cloud_name": "string",
+      "cloud_provider": "string",
+      "contact_number": "string",
+      "email_id": "string",
+      "founder_name": "string",
+      "started_year": "string"
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chainId": "ButtonActionChain"
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chainId": "ONLOAD"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-checkboxset": {
+        "path": "ojs/ojcheckboxset"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-radioset": {
+        "path": "ojs/ojradioset"
+      }
+    }
+  }
+}

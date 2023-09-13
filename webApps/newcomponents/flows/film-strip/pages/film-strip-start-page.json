@@ -1,0 +1,194 @@
+{
+  "title": "film strip",
+  "description": "",
+  "variables": {
+    "cloudnames": {
+      "type": "getCloud18Cloudgetbyid2"
+    },
+    "clouds": {
+      "type": [
+        {
+          "id": "number",
+          "title": "string"
+        }
+      ]
+    },
+    "currentcloud": {
+      "type": {
+        "cloud_provider": "string",
+        "id": "number",
+        "index": "number"
+
+      }
+    },
+    "getCloud18Cloudgetbyid2ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "test/getCloud18Cloudgetbyid2",
+        "itemsPath": "items",
+        "responseType": "getCloud18Cloudgetbyid2Response2",
+        "uriParameters": {
+          "pcloud_id": "{{ $variables.currentcloud.index }}"
+        },
+        "keyAttributes": "cloud_id"
+      }
+    }
+  },
+  "metadata": {
+    "dynamicContainerMetadata": {
+      "type": "vb/ContainerMetadataProviderDescriptor"
+    }
+  },
+  "types": {
+    "@decorators.getCloud18Cloudgetbyid2": {
+      "endpoint": "getCloud18Cloudgetbyid2",
+      "service": "test",
+      "path": "response"
+    },
+    "@decorators.getCloud18Cloudgetbyid2Response": {
+      "endpoint": "getCloud18Cloudgetbyid2",
+      "service": "test",
+      "path": "response"
+    },
+    "@decorators.getCloud18Cloudgetbyid2Response2": {
+      "endpoint": "getCloud18Cloudgetbyid2",
+      "service": "test",
+      "path": "response"
+    },
+    "@decorators.getCloud18CloudsearchResponse": {
+      "endpoint": "getCloud18Cloudsearch",
+      "service": "test",
+      "path": "response"
+    },
+    "getCloud18Cloudgetbyid2": {
+      "count": "number",
+      "hasMore": "boolean",
+      "items": [
+        {
+          "business_type": "string",
+          "cloud_id": "number",
+          "cloud_name": "string",
+          "cloud_provider": "string",
+          "contact_number": "string",
+          "email_id": "string",
+          "founder_name": "string",
+          "started_year": "string"
+        }
+      ],
+      "limit": "number",
+      "links": [
+        {
+          "href": "string",
+          "rel": "string"
+        }
+      ],
+      "offset": "number"
+    },
+    "getCloud18Cloudgetbyid2Response": {
+      "items": [
+        {
+          "cloud_id": "number",
+          "cloud_provider": "string",
+          "contact_number": "string",
+          "email_id": "string",
+          "founder_name": "string"
+        }
+      ]
+    },
+    "getCloud18Cloudgetbyid2Response2": {
+      "items": [
+        {
+          "cloud_id": "number",
+          "cloud_name": "string",
+          "cloud_provider": "string",
+          "email_id": "string",
+          "founder_name": "string"
+        }
+      ]
+    },
+    "getCloud18CloudsearchResponse": {
+      "items": [
+        {
+          "cloud_id": "number",
+          "cloud_provider": "string",
+          "contact_number": "string",
+          "email_id": "string",
+          "founder_name": "string"
+        }
+      ]
+    }
+
+  },
+  "eventListeners": {
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chainId": "onload"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dyn-container": {
+        "path": "oj-dyn/container/loader"
+      },
+      "oj-film-strip": {
+        "path": "ojs/ojfilmstrip"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-train": {
+        "path": "ojs/ojtrain"
+      }
+    }
+  },
+  "layouts": {
+    "containerLayout1": {
+      "label": "Container Rule Set 1",
+      "layoutType": "container",
+      "layouts": {
+        "case1": {
+          "label": "Case 1",
+          "layoutType": "container",
+          "layout": {
+            "sectionTemplateMap": {
+              "template1": "template1"
+            },
+            "displayProperties": [
+              "template1"
+            ]
+          }
+        }
+      },
+      "rules": [
+        "containerLayout1-rule1"
+      ]
+    },
+    "containerLayout1-rule1": {
+      "expression": "case1"
+    }
+  },
+  "templates": {
+    "template1": {
+      "title": "Default Section",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "section",
+        "layout": "containerLayout1"
+      }
+    }
+  }
+}

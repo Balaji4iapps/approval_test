@@ -1,0 +1,51 @@
+{
+  "root": "callRestGetCloud18Cloudgetbyid2",
+  "description": "",
+  "variables": {},
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetCloud18Cloudgetbyid2.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callRestGetCloud18Cloudgetbyid2": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "test/getCloud18Cloudgetbyid2",
+        "uriParams": {
+          "pcloud_id": "420"
+        }
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "callFunctionConvertJSON"
+      }
+    },
+    "assignVariablesPostCompanyVar": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.PostCompanyVar": {
+          "source": "{{ $chain.results.callFunctionConvertJSON }}",
+          "auto": "always"
+        }
+      }
+    },
+    "callFunctionConvertJSON": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "convertJSON",
+        "params": [
+          "{{ $chain.results.callRestGetCloud18Cloudgetbyid2.body.items }}"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesPostCompanyVar"
+      }
+    }
+  }
+}

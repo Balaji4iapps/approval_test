@@ -1,0 +1,147 @@
+{
+  "title": "status checker",
+  "description": "",
+  "variables": {
+    "count": {
+      "type": "string"
+    },
+    "dataADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getCloud18CloudsearchResponse",
+        "keyAttributes": "cloud_id"
+      }
+    },
+    "getCloud18CloudsearchListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "test/getCloud18Cloudsearch",
+        "keyAttributes": "cloud_id",
+        "itemsPath": "items",
+        "responseType": "getCloud18CloudsearchResponse"
+      }
+    },
+    "index": {
+      "type": "string"
+    },
+    "newdataADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getCloud18Approvalhistorygetall",
+        "keyAttributes": "action_history_id"
+      }
+    },
+    "statusDetails": {
+      "type": [
+{
+            "id": "number",
+            "label": "number"
+          }      ],
+      "defaultValue": "[[ $variables.statusDetails ]]"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getCloud18Approvalhistorygetall": {
+      "endpoint": "getCloud18Approvalhistorygetall",
+      "service": "test",
+      "path": "response"
+    },
+    "@decorators.getCloud18Cloudsearch": {
+      "endpoint": "getCloud18Cloudsearch",
+      "service": "test",
+      "path": "response"
+    },
+    "@decorators.getCloud18CloudsearchResponse": {
+      "endpoint": "getCloud18Cloudsearch",
+      "service": "test",
+      "path": "response"
+    },
+    "getCloud18Approvalhistorygetall": {
+          "action_code": "string",
+          "action_comments": "string",
+          "action_date": "string",
+          "action_history_id": "number",
+          "action_level": "number",
+          "action_sequence_num": "number",
+          "approved_by": "number",
+          "category": "string",
+          "created_by": "string",
+          "creation_date": "string",
+          "last_update_date": "string",
+          "last_update_login": "string",
+          "last_updated_by": "string",
+          "object_version_number": "number",
+          "requester_user_id": "number",
+          "response_user_id": "number",
+          "submission_date": "string",
+          "transaction_id": "number",
+          "transaction_num": "string",
+          "transaction_source": "string",
+          "transaction_type": "string"
+    },
+    "getCloud18Cloudsearch": {
+      "items": [
+        {
+          "cloud_id": "number",
+          "cloud_name": "string"
+        }
+      ]
+    },
+    "getCloud18CloudsearchResponse": {
+          "cloud_id": "number",
+          "cloud_name": "string"
+    }
+
+  },
+  "eventListeners": {
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chainId": "onload"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-action-card": {
+        "path": "ojs/ojactioncard"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-collapsible": {
+        "path": "ojs/ojcollapsible"
+      },
+      "oj-film-strip": {
+        "path": "ojs/ojfilmstrip"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      }
+
+    }
+  }
+}
